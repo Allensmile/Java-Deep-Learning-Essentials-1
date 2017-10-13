@@ -129,10 +129,12 @@ public class Perceptrons {
                 classified_ += classifier.train(train_X[i], train_T[i], learningRate);
             }
 
-            if (classified_ == train_N) break;  // when all data classified correctly
+            if (classified_ == train_N) 
+            	break;  // when all data classified correctly
 
             epoch++;
-            if (epoch > epochs) break;
+            if (epoch > epochs) 
+            	break;
         }
 
 
