@@ -23,11 +23,12 @@ public final class ActivationFunction {
 
         for (int i = 0; i < n; i++) {
             if (max < x[i]) {
-                max = x[i];  // to prevent overflow
+                max = x[i];  // to prevent overflow, 防止什么溢出？sum吗？
             }
         }
 
         for (int i = 0; i < n; i++) {
+        	// FIX 为什么减去max?
             y[i] = Math.exp( x[i] - max );
             sum += y[i];
         }

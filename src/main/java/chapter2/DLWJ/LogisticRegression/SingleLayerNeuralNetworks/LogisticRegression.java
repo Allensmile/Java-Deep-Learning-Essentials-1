@@ -137,7 +137,8 @@ public class LogisticRegression {
         double[][][] train_X_minibatch = new double[minibatch_N][minibatchSize][nIn];  // minibatches of training data
         int[][][] train_T_minibatch = new int[minibatch_N][minibatchSize][nOut];       // minibatches of output data for training
         List<Integer> minibatchIndex = new ArrayList<>();  // data index for minibatch to apply SGD
-        for (int i = 0; i < train_N; i++) minibatchIndex.add(i);
+        for (int i = 0; i < train_N; i++) 
+        	minibatchIndex.add(i);
         Collections.shuffle(minibatchIndex, rng);  // shuffle data index for SGD
 
 
