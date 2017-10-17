@@ -18,7 +18,8 @@ public class HiddenLayer {
 
     public HiddenLayer(int nIn, int nOut, double[][] W, double[] b, Random rng, String activation) {
 
-        if (rng == null) rng = new Random(1234);  // seed random
+        if (rng == null) 
+        	rng = new Random(1234);  // seed random
 
         if (W == null) {
 
@@ -33,7 +34,8 @@ public class HiddenLayer {
 
         }
 
-        if (b == null) b = new double[nOut];
+        if (b == null) 
+        	b = new double[nOut];
 
         this.nIn = nIn;
         this.nOut = nOut;

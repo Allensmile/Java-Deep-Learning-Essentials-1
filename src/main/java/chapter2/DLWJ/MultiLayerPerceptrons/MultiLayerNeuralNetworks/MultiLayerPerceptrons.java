@@ -5,7 +5,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-import chapter2.DLWJ.LogisticRegression.SingleLayerNeuralNetworks.LogisticRegression;
+
+import chapter2.DLWJ.MultiLayerPerceptrons.SingleLayerNeuralNetworks.LogisticRegression;
 
 
 public class MultiLayerPerceptrons {
@@ -23,7 +24,8 @@ public class MultiLayerPerceptrons {
         this.nHidden = nHidden;
         this.nOut = nOut;
 
-        if (rng == null) rng = new Random(1234);
+        if (rng == null) 
+        	rng = new Random(1234);
         this.rng = rng;
 
         // construct hidden layer with tanh as activation function
@@ -35,8 +37,8 @@ public class MultiLayerPerceptrons {
     }
 
     public void train(double[][] X, int T[][], int minibatchSize, double learningRate) {
-
-        double[][] Z = new double[minibatchSize][nIn];  // outputs of hidden layer (= inputs of output layer)
+    	// 原来是 double[][] Z = new double[minibatchSize][nIn];
+        double[][] Z = new double[minibatchSize][nHidden];  // outputs of hidden layer (= inputs of output layer)
         double[][] dY;
 
         // forward hidden layer
@@ -88,7 +90,8 @@ public class MultiLayerPerceptrons {
         double[][][] train_X_minibatch = new double[minibatch_N][minibatchSize][nIn];
         int[][][] train_T_minibatch = new int[minibatch_N][minibatchSize][nOut];
         List<Integer> minibatchIndex = new ArrayList<>();
-        for (int i = 0; i < train_N; i++) minibatchIndex.add(i);
+        for (int i = 0; i < train_N; i++) 
+        	minibatchIndex.add(i);
         Collections.shuffle(minibatchIndex, rng);
 
         //
